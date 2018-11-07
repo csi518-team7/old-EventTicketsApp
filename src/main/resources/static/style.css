@@ -32,6 +32,7 @@
     :: 21.1.0 Single Cool Facts CSS
     :: 21.2.0 Accordians Area CSS
     :: 21.3.0 Tabs Area CSS
+:: 22.0.0 Signup Area CSS
 */
 /* :: 1.0 Import Fonts */
 @import url("https://fonts.googleapis.com/css?family=Allura|Raleway:200,300,400,500,600,700,800,900");
@@ -1918,6 +1919,54 @@ img {
     color: #bd177a; }
   .musica-tabs-content .tab-content h6 {
     font-size: 18px; }
+
+/* :: 22.0.0 Signup Area CSS */
+.signup-content {
+  position: relative;
+  z-index: 2; }
+  .signup-content .signup-social-info {
+    margin-bottom: 40px; }
+    .signup-content .signup-social-info a {
+      display: inline-block;
+      margin-right: 50px; }
+      .signup-content .signup-social-info a:hover, .signup-content .signup-social-info a:focus {
+        color: #bd177a; }
+      @media only screen and (max-width: 767px) {
+        .signup-content .signup-social-info a {
+          margin-right: 20px; } }
+  .signup-content .single-signup-info {
+    position: relative;
+    margin-bottom: 30px; }
+    .signup-content .single-signup-info:last-child {
+      margin-bottom: 0; }
+    .signup-content .single-signup-info .icon {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50px;
+      flex: 0 0 50px;
+      max-width: 50px;
+      width: 50px; }
+  .signup-content .signup-form-area .form-control {
+    position: relative;
+    z-index: 2;
+    height: 45px;
+    width: 100%;
+    background-color: #f3f3f3;
+    font-size: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 0;
+    padding: 15px 30px;
+    font-style: italic;
+    font-weight: 700;
+    color: #bbbbbb;
+    border-bottom: 2px solid transparent;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms; }
+    .signup-content .signup-form-area .form-control:focus {
+      box-shadow: none;
+      border-bottom: 2px solid #bd177a; }
+  .signup-content .signup-form-area textarea.form-control {
+    height: 180px; }
 
 /* ====== The End ====== */
 

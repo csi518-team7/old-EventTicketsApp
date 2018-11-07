@@ -39,4 +39,12 @@ public class NavigationController {
     public String upcoming() {
         return "upcoming";
     }
+
+    @GetMapping("/signup")
+    public String signup() {
+        return "signup";
+    }
+
+    @GetMapping("/signin")
+    public String signin(){ return "signin"; }
 }
