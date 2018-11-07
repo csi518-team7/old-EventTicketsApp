@@ -11,7 +11,9 @@ public class Trasaction {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int transactionID;
     private int userID;
+    private String userName;
     private int EventID;
+    private String eventName;
 
     public int getTransactionID() {
         return transactionID;
@@ -35,5 +37,21 @@ public class Trasaction {
 
     public void setEventID(int eventID) {
         EventID = eventID;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 }
