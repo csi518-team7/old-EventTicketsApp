@@ -10,7 +10,7 @@ import java.util.Date;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer eventID;
+    private int eventID;
     private String eventName;
     private String eventCategory; // Concerts, Sports, Festivals
     private Date date;
@@ -19,11 +19,11 @@ public class Event {
     private float price;
     private String imgUrl;
 
-    public Integer getEventID() {
+    public int getEventID() {
         return eventID;
     }
 
-    public void setEventID(Integer eventID) {
+    public void setEventID(int eventID) {
         this.eventID = eventID;
     }
 

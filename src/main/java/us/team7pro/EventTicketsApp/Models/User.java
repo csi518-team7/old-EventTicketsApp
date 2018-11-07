@@ -10,7 +10,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer userID;
+    private int userID;
 
     // User, Admin, Organizer
     private String role;
@@ -18,13 +18,12 @@ public class User {
     private String password;
     private String email;
     private int[] transactions;
-    private List<Event> ticketsList;
 
-    public Integer getUserID() {
+    public int getUserID() {
         return userID;
     }
 
-    public void setUserID(Integer userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
@@ -58,5 +57,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int[] getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(int[] transactions) {
+        this.transactions = transactions;
     }
 }

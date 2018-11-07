@@ -10,8 +10,8 @@ public class Trasaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int transactionID;
-    private Integer userID;
-    private Integer EventID;
+    private int userID;
+    private int EventID;
 
     public int getTransactionID() {
         return transactionID;
@@ -21,19 +21,19 @@ public class Trasaction {
         this.transactionID = transactionID;
     }
 
-    public Integer getUserID() {
+    public int getUserID() {
         return userID;
     }
 
-    public void setUserID(Integer userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
-    public Integer getEventID() {
+    public int getEventID() {
         return EventID;
     }
 
-    public void setEventID(Integer eventID) {
+    public void setEventID(int eventID) {
         EventID = eventID;
     }
 }
