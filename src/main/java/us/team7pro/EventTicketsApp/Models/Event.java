@@ -19,6 +19,13 @@ public class Event {
     private float price;
     private String imgUrl;
 
+    public Event(int eventID, String eventName, String eventCategory, String location) {
+        this.eventID = eventID;
+        this.eventName = eventName;
+        this.eventCategory = eventCategory;
+        this.location = location;
+    }
+
     public int getEventID() {
         return eventID;
     }
