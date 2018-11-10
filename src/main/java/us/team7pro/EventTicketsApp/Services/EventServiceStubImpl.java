@@ -45,8 +45,41 @@ public class EventServiceStubImpl implements EventService {
     }
 
     @Override
-    public Event findById(int eventID) {
+    public List<Event> findLatest(int num){
+        return this.findLatest5();
+    }
+
+    @Override
+    public Event findByEventID(int eventID) {
         return this.events.stream().filter(e-> Objects.equals(e.getEventID(), eventID))
                 .findFirst().orElse(null);
+    }
+
+    @Override
+    public Event create(Event event) {
+        events.add(event);
+        return event;
+    }
+
+    @Override
+    public Event edit(Event event) {
+        for (int i = 0; i < this.events.size(); i++) {
+            if (Objects.equals(this.events.get(i).getEventID(), event.getEventID())) {
+                this.events.set(i, event);
+                return event;
+            }
+        }
+        throw new RuntimeException("Post not found: " + event.getEventID());
+    }
+
+    @Override
+    public void deleteById(int id) {
+        for (int i = 0; i < this.events.size(); i++) {
+            if (Objects.equals(this.events.get(i).getEventID(), id)) {
+                this.events.remove(i);
+                return;
+            }
+        }
+        throw new RuntimeException("Post not found: " + id);
     }
 }

@@ -19,6 +19,10 @@ public class Event {
     private float price;
     private String imgUrl;
 
+    public Event(){
+        
+    }
+
     public Event(int eventID, String eventName, String eventCategory, String location) {
         this.eventID = eventID;
         this.eventName = eventName;
@@ -89,4 +93,5 @@ public class Event {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
+
 }

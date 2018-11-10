@@ -26,7 +26,78 @@
 
 
 
+<div class="container">
+
+    
+</div>
     <p>Admin Dashboard</p>
+       <!-- ##### Upcoming Shows Area Start ##### -->
+       <div class="upcoming-shows-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>Upcoming Events</h2>
+                        <h6>Find your favorite show, Buy a ticket!</h6>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-12">
+                    <!-- Upcoming Shows Content -->
+                    <div class="upcoming-shows-content">
+    
+                        <!-- Single Upcoming Shows -->
+                        <div class="single-upcoming-shows d-flex align-items-center flex-wrap" th:each="t : ${testlist}">
+                    
+                                <div class="shows-date">
+                                    <h2>17 <span>July</span></h2>
+                                </div>
+                                <div class="shows-desc d-flex align-items-center">
+                                    <div class="shows-img">
+                                        <img src="img/bg-img/s1.jpg" alt="">
+                                    </div>
+                                    <div class="shows-name">
+                                        <h6 th:text="${t.eventName}">Electric castle Festival</h6>
+                                        <p th:text="${t.location}">Cluj, Romania</p>
+                                    </div>
+                                </div>
+                                <div class="shows-location">
+                                    <p>At the Castle</p>
+                                </div>
+                                <div class="shows-time">
+                                    <p>20:30</p>
+                                </div>
+                                <div class="buy-tickets">
+                                <form action="/admin"  method="post"></form>
+                                    <input type="hidden" name="del_eventId" value="${t.eventId}"/>
+                                        <!-- <a class="btn bg-danger">Delete</a> -->
+                                    <button class="btn bg-danger" onClick="return confirm('sure?')">Delete</button>
+                               
+
+
+                                </form>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--Test only-->
+    <article th:each="t : ${testlist}">
+        <!-- <h2 class="id" th:text="${t.eventId}">Event ID</h2> -->
+        <h2 class="title" th:text="${t.eventName}">Event Name</h2>
+        <h2 class="" th:text="${t.eventCategory}">Event Category</h2>
+        <h2 class="" th:text="${t.location}">Event Location</h2>
+      </article>
 
     <footer th:replace="layout :: site-footer"></footer>
 

@@ -8,5 +8,9 @@ public interface EventService {
     List<Event> findAll();
     List<Event> findLatest4();
     List<Event> findLatest5();
-    Event findById(int eventID);
+    List<Event> findLatest(int numEvents);
+    Event findByEventID(int eventID);
+    Event create(Event event);
+    Event edit(Event event);
+    void deleteById(int id);
 }

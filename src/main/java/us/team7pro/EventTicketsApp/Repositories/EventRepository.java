@@ -4,4 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import us.team7pro.EventTicketsApp.Models.Event;
 
 public interface EventRepository extends JpaRepository<Event, Integer> {
+    Event findByEventID(int eventId);
 }
