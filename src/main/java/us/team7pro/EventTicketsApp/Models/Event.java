@@ -4,16 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
 public class Event {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int eventID;
     private String eventName;
     private String eventCategory; // Concerts, Sports, Festivals
-    private Date date;
+    private String date;
     private String location;
     private String description;
     private float price;
@@ -23,11 +22,14 @@ public class Event {
         
     }
 
-    public Event(int eventID, String eventName, String eventCategory, String location) {
-        this.eventID = eventID;
+    public Event(String eventName, String eventCategory, String date, String location, String description, float price, String imgUrl) {
         this.eventName = eventName;
         this.eventCategory = eventCategory;
+        this.date = date;
         this.location = location;
+        this.description = description;
+        this.price = price;
+        this.imgUrl = imgUrl;
     }
 
     public int getEventID() {
@@ -54,11 +56,11 @@ public class Event {
         this.eventCategory = eventCategory;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -94,4 +96,17 @@ public class Event {
         this.imgUrl = imgUrl;
     }
 
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventID=" + eventID +
+                ", eventName='" + eventName + '\'' +
+                ", eventCategory='" + eventCategory + '\'' +
+                ", date='" + date + '\'' +
+                ", location='" + location + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", imgUrl='" + imgUrl + '\'' +
+                '}';
+    }
 }

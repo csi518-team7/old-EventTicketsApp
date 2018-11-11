@@ -8,12 +8,22 @@ import javax.persistence.Id;
 @Entity
 public class Transaction {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int transactionID;
     private int userID;
     private String userName;
     private int EventID;
     private String eventName;
+
+    public Transaction() {
+    }
+
+    public Transaction(int userID, String userName, int eventID, String eventName) {
+        this.userID = userID;
+        this.userName = userName;
+        EventID = eventID;
+        this.eventName = eventName;
+    }
 
     public int getTransactionID() {
         return transactionID;
@@ -53,5 +63,16 @@ public class Transaction {
 
     public void setEventName(String eventName) {
         this.eventName = eventName;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "transactionID=" + transactionID +
+                ", userID=" + userID +
+                ", userName='" + userName + '\'' +
+                ", EventID=" + EventID +
+                ", eventName='" + eventName + '\'' +
+                '}';
     }
 }

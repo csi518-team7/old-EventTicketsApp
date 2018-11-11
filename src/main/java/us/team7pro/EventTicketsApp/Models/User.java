@@ -4,12 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userID;
 
     // User, Admin, Organizer
@@ -17,7 +17,18 @@ public class User {
     private String userName;
     private String password;
     private String email;
-    private int[] transactions;
+    private ArrayList<Integer> transactions;
+
+    public User() {
+    }
+
+    public User(String role, String userName, String password, String email, ArrayList<Integer> transactions) {
+        this.role = role;
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+        this.transactions = transactions;
+    }
 
     public int getUserID() {
         return userID;
@@ -59,11 +70,23 @@ public class User {
         this.email = email;
     }
 
-    public int[] getTransactions() {
+    public ArrayList<Integer> getTransactions() {
         return transactions;
     }
 
-    public void setTransactions(int[] transactions) {
+    public void setTransactions(ArrayList<Integer> transactions) {
         this.transactions = transactions;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userID=" + userID +
+                ", role='" + role + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", transactions=" + transactions +
+                '}';
     }
 }

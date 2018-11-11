@@ -16,12 +16,12 @@ public class EventServiceStubImpl implements EventService {
     private List<Event> events = new LinkedList<>();
 
     public EventServiceStubImpl() {
-        events.add(new Event(1, "Event Dummy 1", "Concerts", "Albany"));
-        events.add(new Event(2, "Event Dummy 2", "Sports", "Canada"));
-        events.add(new Event(3, "Event Dummy 3", "Festival", "Troy"));
-        events.add(new Event(6, "Event Dummy 6", "Concerts", "New Jersey"));
-        events.add(new Event(5, "Event Dummy 5", "Theater", "Queens"));
-        events.add(new Event(4, "Event Dummy 4", "Concerts", "Long Island"));
+//        events.add(new Event(1, "Event Dummy 1", "Concerts", "Albany"));
+//        events.add(new Event(2, "Event Dummy 2", "Sports", "Canada"));
+//        events.add(new Event(3, "Event Dummy 3", "Festival", "Troy"));
+//        events.add(new Event(6, "Event Dummy 6", "Concerts", "New Jersey"));
+//        events.add(new Event(5, "Event Dummy 5", "Theater", "Queens"));
+//        events.add(new Event(4, "Event Dummy 4", "Concerts", "Long Island"));
     }
 
 

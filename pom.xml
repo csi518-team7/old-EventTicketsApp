@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>EventTicketsApp</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Team project using Spring Boot and Thymeleaf.</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
