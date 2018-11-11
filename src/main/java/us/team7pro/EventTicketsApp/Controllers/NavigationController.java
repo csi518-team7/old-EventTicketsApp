@@ -35,10 +35,10 @@ public class NavigationController {
         return "theater";
     }
 
-    @GetMapping("/upcoming")
-    public String upcoming() {
-        return "upcoming";
-    }
+//    @GetMapping("/upcoming")
+//    public String upcoming() {
+//        return "upcoming";
+//    }
 
     @GetMapping("/signup")
     public String signup() {

@@ -24,7 +24,7 @@ public class EventServiceJpaImpl implements EventService{
         Collections.sort(allEvents, new Comparator<Event>(){
             @Override
             public int compare(Event e1, Event e2){
-                return e2.getDate().compareTo(e1.getDate());
+                return e2.getDay().compareTo(e1.getDay());
             }
         });
         for(int i=allEvents.size()-1; i>=num; i--){
@@ -35,10 +35,6 @@ public class EventServiceJpaImpl implements EventService{
     @Override
     public List<Event> findLatest4(){
         return findLatest(4);
-    }
-    @Override
-    public List<Event> findLatest5(){
-        return findLatest(5);
     }
 
     @Override

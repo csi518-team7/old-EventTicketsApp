@@ -28,10 +28,10 @@ public class EventTicketsAppApplication {
 		return args -> {
 			//Dummy Event data feeding
 			List<Event> events = new LinkedList<>();
-			events.add(new Event("Kygo  Music", "Concert", "12-10-2018", "New York", "Kygo is a Electronic Dance Music DJ", 19.99f, "img/bg-1.jpg"));
-			events.add(new Event("Ultra Music Festival" ,"Festival", "11-1-2018", "Miami", "Top 10 Dj's playing", 27.49f, "img/bg-3.jpg"));
-			events.add(new Event("Marshmello" ,"Concert", "10-18-2018", "Chicago", "Marshmello plays Techno", 13.99f, "img/bg-4.jpg"));
-			events.add(new Event("VH1 Supersonic" ,"Festival", "10-18-2018", "California", "Sponsered by Sreekar Dhaduvai", 15.99f, "img/bg-5.jpg"));
+			events.add(new Event("Kygo  Music", "Concert", "Dec", "10", "New York", "Kygo is a Electronic Dance Music DJ", 19.99f, "bg-1"));
+			events.add(new Event("Ultra Music Festival" ,"Festival", "Nov","1", "Miami", "Top 10 Dj's playing", 27.49f, "bg-3"));
+			events.add(new Event("Marshmello" ,"Concert", "Oct", "18", "Chicago", "Marshmello plays Techno", 13.99f, "bg-2"));
+			events.add(new Event("VH1 Supersonic" ,"Festival", "Oct", "18", "California", "Sponsered by Sreekar Dhaduvai", 15.99f, "bg-5"));
 			for (Event e: events) {
 				eventRepository.save(e);
 			}

@@ -16,12 +16,6 @@ public class EventServiceStubImpl implements EventService {
     private List<Event> events = new LinkedList<>();
 
     public EventServiceStubImpl() {
-//        events.add(new Event(1, "Event Dummy 1", "Concerts", "Albany"));
-//        events.add(new Event(2, "Event Dummy 2", "Sports", "Canada"));
-//        events.add(new Event(3, "Event Dummy 3", "Festival", "Troy"));
-//        events.add(new Event(6, "Event Dummy 6", "Concerts", "New Jersey"));
-//        events.add(new Event(5, "Event Dummy 5", "Theater", "Queens"));
-//        events.add(new Event(4, "Event Dummy 4", "Concerts", "Long Island"));
     }
 
 
@@ -37,16 +31,11 @@ public class EventServiceStubImpl implements EventService {
                 .limit(4).collect(Collectors.toList());
     }
 
-    @Override
-    public List<Event> findLatest5() {
-        return this.events.stream()
-                .sorted((a,b)->b.getEventCategory().compareTo(a.getEventCategory()))
-                .limit(5).collect(Collectors.toList());
-    }
+
 
     @Override
     public List<Event> findLatest(int num){
-        return this.findLatest5();
+        return this.findLatest4();
     }
 
     @Override

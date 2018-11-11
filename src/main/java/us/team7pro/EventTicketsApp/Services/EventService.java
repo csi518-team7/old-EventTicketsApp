@@ -7,7 +7,6 @@ import java.util.List;
 public interface EventService {
     List<Event> findAll();
     List<Event> findLatest4();
-    List<Event> findLatest5();
     List<Event> findLatest(int numEvents);
     Event findByEventID(int eventID);
     Event create(Event event);

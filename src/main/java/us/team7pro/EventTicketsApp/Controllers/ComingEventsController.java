@@ -3,7 +3,7 @@ package us.team7pro.EventTicketsApp.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import us.team7pro.EventTicketsApp.Models.Event;
 import us.team7pro.EventTicketsApp.Services.EventService;
 
@@ -14,10 +14,10 @@ public class ComingEventsController {
     @Autowired
     private EventService eventService;
 
-    @RequestMapping("/test")
-    public String test(Model model) {
-        List<Event> testList = eventService.findLatest4();
-        model.addAttribute("testlist", testList);
-        return "testpage";
+    @GetMapping("/upcoming")
+    public String upcoming(Model model) {
+        List<Event> upcomingList = eventService.findLatest4();
+        model.addAttribute("upcomingList", upcomingList);
+        return "upcoming";
     }
 }

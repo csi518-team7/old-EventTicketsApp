@@ -12,7 +12,8 @@ public class Event {
     private int eventID;
     private String eventName;
     private String eventCategory; // Concerts, Sports, Festivals
-    private String date;
+    private String month;
+    private String day;
     private String location;
     private String description;
     private float price;
@@ -22,10 +23,11 @@ public class Event {
         
     }
 
-    public Event(String eventName, String eventCategory, String date, String location, String description, float price, String imgUrl) {
+    public Event(String eventName, String eventCategory, String month, String day, String location, String description, float price, String imgUrl) {
         this.eventName = eventName;
         this.eventCategory = eventCategory;
-        this.date = date;
+        this.month = month;
+        this.day = day;
         this.location = location;
         this.description = description;
         this.price = price;
@@ -56,12 +58,20 @@ public class Event {
         this.eventCategory = eventCategory;
     }
 
-    public String getDate() {
-        return date;
+    public String getMonth() {
+        return month;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
     }
 
     public String getLocation() {
@@ -102,7 +112,8 @@ public class Event {
                 "eventID=" + eventID +
                 ", eventName='" + eventName + '\'' +
                 ", eventCategory='" + eventCategory + '\'' +
-                ", date='" + date + '\'' +
+                ", month='" + month + '\'' +
+                ", day='" + day + '\'' +
                 ", location='" + location + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
