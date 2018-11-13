@@ -14,17 +14,41 @@
     <header th:replace="layout :: site-header"></header>
     
 
-<!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area bg-img bg-overlay2" style="background-image: url(img/bg-img/breadcumb5.jpg);">
-    <div class="bradcumbContent">
-        <h2>Sports</h2>
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area bg-img bg-overlay2" style="background-image: url(img/bg-img/breadcumb5.jpg);">
+        <div class="bradcumbContent">
+            <h2>Sports</h2>
+        </div>
     </div>
-</div>
-<!-- bg gradients -->
-<div class="bg-gradients"></div>
-<!-- ##### Breadcumb Area End ##### -->
+    <!-- bg gradients -->
+    <div class="bg-gradients"></div>
+    <!-- ##### Breadcumb Area End ##### -->
 
-
+    <!-- ##### Sports Area Start ##### -->
+    <div class="upcoming-shows-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>Sports</h2>
+                        <h6>Find your favorite Sports, Buy a ticket!</h6>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-12">
+                    <!-- Sports Content -->
+                    <div class="upcoming-shows-content">
+                        
+                        <!-- Single Sport Events -->
+                        <div th:replace="fragments :: single-event-html"></div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Sports Area End ##### -->
 
     <p>Sports</p>
 
@@ -41,5 +65,8 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+
+    <!-- Custom JS for Thymeleaf -->
+    <script th:replace="fragments :: single-event-js"></script>
 </body>
 </html>

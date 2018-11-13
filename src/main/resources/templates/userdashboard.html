@@ -2,9 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head th:replace="layout :: site-head">
         <!-- Title -->
-        <title>User Dashboard - MyTicket</title>
+        <title>Organizer Dashboard - Create/Manage Events </title>
     </head>
 <body>
+
     <!-- ##### Preloader ##### -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="circle-preloader">
@@ -26,7 +27,69 @@
 
 
 
-    <p>User Dashboard</p>
+
+
+
+    <!--------------------------------------------------->
+
+    <!-- ##### Upcoming Shows Area Start ##### -->
+    <div class="upcoming-shows-area section-padding-100 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-heading">
+                            <hr><hr>
+                            <h2>GOING</h2>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Upcoming Shows Content -->
+                        <div class="upcoming-shows-content">
+    
+                            <!-- Single Upcoming Shows -->
+                            <div th:each="event : ${events}" class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                                <div class="shows-date">
+                                    <h2><div th:id="'event-date' + ${event.eventID}"></div> <span><div th:id="'event-month' + ${event.eventID}"></div></span></h2>
+                                </div>
+                                <div class="shows-desc d-flex align-items-center">
+                                    <div class="shows-img">
+                                        <img th:src="${event.imgUrl}" alt="">
+                                    </div>
+                                    <div class="shows-name">
+                                        <h6 th:text="${event.eventName}"></h6>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="shows-location">
+                                    <p th:text="${event.location}" />
+                                </div>
+                                <div class="shows-time">
+                                    <p th:id="'event-day' + ${event.eventID}"></p>
+                                    <p th:id="'event-time' + ${event.eventID}"></p>
+                                </div>
+                                <div class="buy-tickets">
+                                    <form th:action="@{/cancelTicket}" method="POST">
+                                        <input type="hidden" name="eventID" th:value="${event.eventID}" />
+                                        <input type="hidden" name="userID" th:value="0" />
+                                        <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">Cancel Ticket</a>
+                                    </form>
+                                    <hr>
+                                    <a href="#" class="btn musica-btn">Re-sell Ticket</a>                                    
+                                </div>   
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ##### Upcoming Shows Area End ##### -->
+    
+
+    
 
     <footer th:replace="layout :: site-footer"></footer>
 
@@ -41,5 +104,8 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+
+    <!-- Custom JS for Thymeleaf -->
+    <script th:replace="fragments :: single-event-js"></script>
 </body>
 </html>

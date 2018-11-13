@@ -115,13 +115,21 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-12">
                 <!-- Upcoming Shows Content -->
                 <div class="upcoming-shows-content">
-
+                    
                     <!-- Single Upcoming Shows -->
+                    <div th:replace="fragments :: single-event-html"></div>
+                </div>    
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-12">
+                
+                <div class="upcoming-shows-content">
+      
                     <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
                         <div class="shows-date">
                             <h2>17 <span>July</span></h2>
@@ -145,8 +153,7 @@
                             <a href="#" class="btn musica-btn">Buy Tikets</a>
                         </div>
                     </div>
-
-                    <!-- Single Upcoming Shows -->
+               
                     <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
                         <div class="shows-date">
                             <h2>23 <span>July</span></h2>
@@ -170,8 +177,7 @@
                             <a href="#" class="btn musica-btn">Buy Tikets</a>
                         </div>
                     </div>
-
-                    <!-- Single Upcoming Shows -->
+            
                     <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
                         <div class="shows-date">
                             <h2>25 <span>July</span></h2>
@@ -195,8 +201,7 @@
                             <a href="#" class="btn musica-btn">Buy Tikets</a>
                         </div>
                     </div>
-
-                    <!-- Single Upcoming Shows -->
+    
                     <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
                         <div class="shows-date">
                             <h2>30 <span>July</span></h2>
@@ -221,9 +226,11 @@
                         </div>
                     </div>
 
+                    <div th:replace="fragments :: single-event-html"></div>
+
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <!-- ##### Upcoming Shows Area End ##### -->

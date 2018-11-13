@@ -4,31 +4,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+import java.util.Date;
 
 @Entity
+@Table(name="events")
 public class Event {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int eventID;
     private String eventName;
     private String eventCategory; // Concerts, Sports, Festivals
-    private String month;
-    private String day;
+    private Date date;
     private String location;
     private String description;
     private float price;
     private String imgUrl;
 
-    public Event(){
-        
-    }
+    public Event() {}
 
-    public Event(String eventName, String eventCategory, String month, String day, String location, String description, float price, String imgUrl) {
+    public Event( String eventName, String eventCategory, String location, Date date, String description, float price, String imgUrl) {
+        //this.eventID = eventID;
         this.eventName = eventName;
         this.eventCategory = eventCategory;
-        this.month = month;
-        this.day = day;
         this.location = location;
+        this.date = date;
         this.description = description;
         this.price = price;
         this.imgUrl = imgUrl;
@@ -58,20 +59,12 @@ public class Event {
         this.eventCategory = eventCategory;
     }
 
-    public String getMonth() {
-        return month;
+    public Date getDate() {
+        return date;
     }
 
-    public void setMonth(String month) {
-        this.month = month;
-    }
-
-    public String getDay() {
-        return day;
-    }
-
-    public void setDay(String day) {
-        this.day = day;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getLocation() {
@@ -106,18 +99,5 @@ public class Event {
         this.imgUrl = imgUrl;
     }
 
-    @Override
-    public String toString() {
-        return "Event{" +
-                "eventID=" + eventID +
-                ", eventName='" + eventName + '\'' +
-                ", eventCategory='" + eventCategory + '\'' +
-                ", month='" + month + '\'' +
-                ", day='" + day + '\'' +
-                ", location='" + location + '\'' +
-                ", description='" + description + '\'' +
-                ", price=" + price +
-                ", imgUrl='" + imgUrl + '\'' +
-                '}';
-    }
+    
 }

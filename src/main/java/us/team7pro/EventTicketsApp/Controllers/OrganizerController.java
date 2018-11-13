@@ -26,7 +26,7 @@ public class OrganizerController {
     public String eventSubmit(@ModelAttribute Event newEvent) {
         System.out.println(newEvent.getEventCategory());
         // eventRepository.save(newEvent);
-        return "EventSubmitResult";
+        return "eventSubmitResult";
     }
 
     // @RequestMapping("/createEvent")

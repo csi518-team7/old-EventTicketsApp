@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Primary;
 import java.util.*;
 
 @Service
-@Primary
 public class EventServiceJpaImpl implements EventService{
     @Autowired
     private EventRepository eventRepo;
@@ -18,13 +17,12 @@ public class EventServiceJpaImpl implements EventService{
         return this.eventRepo.findAll();
     }
 
-    @Override 
     public List<Event> findLatest(int num){
         List<Event> allEvents = this.eventRepo.findAll();
         Collections.sort(allEvents, new Comparator<Event>(){
             @Override
             public int compare(Event e1, Event e2){
-                return e2.getDay().compareTo(e1.getDay());
+                return e2.getDate().compareTo(e1.getDate());
             }
         });
         for(int i=allEvents.size()-1; i>=num; i--){
@@ -32,24 +30,29 @@ public class EventServiceJpaImpl implements EventService{
         }
         return allEvents;                
     }
+
     @Override
     public List<Event> findLatest4(){
         return findLatest(4);
     }
 
     @Override
+    public List<Event> findLatest5(){
+        return findLatest(5);
+    }
+   
     public Event findByEventID(int eventID){
         return this.eventRepo.findByEventID(eventID);
     }
-    @Override
+   
     public Event create(Event event){
         return this.eventRepo.save(event);
     }
-    @Override
+  
     public Event edit(Event event){
         return this.eventRepo.save(event);
     }
-    @Override
+
     public void deleteById(int id){
         Event evt = this.findByEventID(id);
         this.eventRepo.delete(evt);

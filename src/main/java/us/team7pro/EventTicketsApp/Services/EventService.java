@@ -5,11 +5,9 @@ import us.team7pro.EventTicketsApp.Models.Event;
 import java.util.List;
 
 public interface EventService {
+    // public List<Event> findLatest(int num);
     List<Event> findAll();
     List<Event> findLatest4();
-    List<Event> findLatest(int numEvents);
+    List<Event> findLatest5();
     Event findByEventID(int eventID);
-    Event create(Event event);
-    Event edit(Event event);
-    void deleteById(int id);
 }

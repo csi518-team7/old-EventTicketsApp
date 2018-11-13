@@ -8,20 +8,21 @@ import javax.persistence.Id;
 @Entity
 public class Transaction {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int transactionID;
     private int userID;
     private String userName;
-    private int EventID;
+    private int eventID;
     private String eventName;
+    private boolean status;  // approved or not
 
-    public Transaction() {
-    }
+    public Transaction() {}
+
 
     public Transaction(int userID, String userName, int eventID, String eventName) {
         this.userID = userID;
         this.userName = userName;
-        EventID = eventID;
+        this.eventID = eventID;
         this.eventName = eventName;
     }
 
@@ -42,11 +43,11 @@ public class Transaction {
     }
 
     public int getEventID() {
-        return EventID;
+        return eventID;
     }
 
     public void setEventID(int eventID) {
-        EventID = eventID;
+        this.eventID = eventID;
     }
 
     public String getUserName() {
@@ -65,14 +66,10 @@ public class Transaction {
         this.eventName = eventName;
     }
 
-    @Override
-    public String toString() {
-        return "Transaction{" +
-                "transactionID=" + transactionID +
-                ", userID=" + userID +
-                ", userName='" + userName + '\'' +
-                ", EventID=" + EventID +
-                ", eventName='" + eventName + '\'' +
-                '}';
+    public boolean getStatus(){
+        return this.status;
+    }
+    public void setStatus(boolean status){
+        this.status = status;
     }
 }
