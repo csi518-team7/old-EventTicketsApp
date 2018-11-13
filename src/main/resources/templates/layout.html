@@ -26,7 +26,7 @@
                     <nav class="classy-navbar justify-content-between" id="musicaNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+                        <a href="/" th:href="@{/}" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -45,7 +45,7 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="/" th:href="@{/}">Home</a></li>
-                                    <li><a hhref="/upcoming" th:href="@{/upcoming}">UpComing</a></li>
+                                    <li><a href="/upcoming" th:href="@{/upcoming}">UpComing</a></li>
                                     <li><a href="#">Events</a>
                                         <ul class="dropdown">
                                             <li><a href="/concerts" th:href="@{/concerts}">Concerts</a></li>
@@ -56,9 +56,8 @@
                                             <li><a href="/festival" th:href="@{/festival}">Festival</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="/carts" th:href="@{/carts}">Carts</a></li>
+                                    <li><a href="/cart" th:href="@{/cart}">Cart</a></li>
                                 </ul>
-
                                 <!-- Social Button -->
                                 <div class="top-social-info">
                                     <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
