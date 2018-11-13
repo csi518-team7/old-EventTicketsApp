@@ -8,7 +8,7 @@ import us.team7pro.EventTicketsApp.Services.TransactionService;
 import us.team7pro.EventTicketsApp.Services.UserService;
 
 @Controller
-public class CartsController {
+public class CartController {
     @Autowired
     private TransactionService transactionService;
 
