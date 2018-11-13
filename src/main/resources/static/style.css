@@ -1622,6 +1622,9 @@ img {
       font-weight: 600;
       color: #ffffff;
       margin-bottom: 0; }
+    .cta-content .cta-text h3 {
+      color: #ffffff;
+    }
       @media only screen and (max-width: 767px) {
         .cta-content .cta-text h6 {
           font-size: 14px; } }
