@@ -98,7 +98,11 @@
                                     <p th:class="'etms-event-price' + ${transaction.eventID}">$50/ticket</p>
                                 </div>
                                 <div class="buy-tickets"><!--Total Ammount-->
-                                    <p th:class="'etms-event-price' + ${transaction.eventID}">$50</p>                                    
+                                    <p th:class="'etms-event-price' + ${transaction.eventID}">$50</p>
+                                    <form th:action="@{/removeFromCart}" method="POST">
+                                        <input type="hidden" name="transactionID" th:value="${transaction.transactionID}" />
+                                        <a href="#" class="btn musica-btn" onclick="$(this).closest('form').submit()">Remove</a>
+                                    </form>
                                 </div>   
                             </div>
     

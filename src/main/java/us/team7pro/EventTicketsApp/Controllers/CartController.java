@@ -18,13 +18,19 @@ public class CartController {
     private EventService eventService;
 
     @PostMapping("/addToCart")
-    public String postCart(@RequestParam int userID, @RequestParam int eventID, @RequestParam int numberOfTickets) {
+    public String addToCart(@RequestParam int userID, @RequestParam int eventID, @RequestParam int numberOfTickets) {
         // 1. Handle data from buyTickets page
         //int userid = 0;
         //int eventid = 0;
         // 2. Save it into repo
         transactionService.addToCart(userID, eventID);
         // 3. redirect to cart page
+        return "redirect:/./cart";
+    }
+
+    @PostMapping("/removeFromCart")
+    public String removeFromCart(@RequestParam int transactionID) {
+        transactionService.delete(transactionService.findByTransactionID(transactionID));
         return "redirect:/./cart";
     }
 
