@@ -4,23 +4,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import us.team7pro.EventTicketsApp.Services.TransactionService;
-import us.team7pro.EventTicketsApp.Services.UserService;
 
 @Controller
 public class CartController {
     @Autowired
     private TransactionService transactionService;
 
-    @PostMapping("/purchaseTicket")
-    public String postCart() {
+    @PostMapping("/addToCart")
+    public String postCart(@RequestParam int userID, @RequestParam int eventID, @RequestParam int numberOfTickets) {
         // 1. Handle data from buyTickets page
-        int userid = 0;
-        int eventid = 0;
+        //int userid = 0;
+        //int eventid = 0;
         // 2. Save it into repo
-        transactionService.addToCart(userid, eventid);
+        transactionService.addToCart(userID, eventID);
         // 3. redirect to cart page
-        return "cart";
+        return "redirect:/./cart";
     }
 
     @GetMapping("/cart")

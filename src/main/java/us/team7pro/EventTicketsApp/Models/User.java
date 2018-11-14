@@ -4,12 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.List;
+import javax.persistence.SequenceGenerator;
 
 @Entity
+@SequenceGenerator(name="debug", initialValue=0)
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="debug") // To ensure general user has 0 as userID.
     private int userID;
 
     // User, Admin, Organizer
@@ -19,8 +20,9 @@ public class User {
     private String email;
     private int[] transactions;
 
+    public User() {}
+
     public User( String role, String userName, String password, String email, int[] transactions) {
-        //this.eventID = eventID;
         this.role = role;
         this.userName = userName;
         this.password = password;

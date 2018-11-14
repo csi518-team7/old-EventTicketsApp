@@ -49,16 +49,16 @@ public class UserController {
         return "userdashboard";
     }
 
-    @RequestMapping("/purchaseTicket")
-    public String purchaseTicket(@RequestParam int eventID, @RequestParam int userID) {
-        if (transactionRepository.findByUserIDAndEventID(userID, eventID) == null) {
-            User usr = userRepository.findByUserID(userID);
-            Event evt = eventRepository.findByEventID(eventID);
-            Transaction t = new Transaction(usr.getUserID(), usr.getUserName(), evt.getEventID(), evt.getEventName());
-            transactionRepository.save(t);
-        }
-        return "redirect:/./userdashboard";
-    }
+    // @RequestMapping("/purchaseTicket")
+    // public String purchaseTicket(@RequestParam int eventID, @RequestParam int userID) {
+    //     if (transactionRepository.findByUserIDAndEventID(userID, eventID) == null) {
+    //         User usr = userRepository.findByUserID(userID);
+    //         Event evt = eventRepository.findByEventID(eventID);
+    //         Transaction t = new Transaction(usr.getUserID(), usr.getUserName(), evt.getEventID(), evt.getEventName());
+    //         transactionRepository.save(t);
+    //     }
+    //     return "redirect:/./userdashboard";
+    // }
 
     @RequestMapping("/cancelTicket")
     public String cancelTicket(@RequestParam int eventID, @RequestParam int userID) {
