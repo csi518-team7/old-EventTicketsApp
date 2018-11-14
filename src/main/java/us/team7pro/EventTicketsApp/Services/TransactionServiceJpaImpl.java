@@ -30,6 +30,11 @@ public class TransactionServiceJpaImpl implements TransactionService{
     }
 
     @Override
+    public List<Transaction> findByUserIDAndStatus(int userID, boolean status) {
+        return transRepo.findByUserIDAndStatus(userID, status);
+    }
+
+    @Override
     public Transaction findByUserIDAndEventID(int userID, int eventID) {
         return null;
     }

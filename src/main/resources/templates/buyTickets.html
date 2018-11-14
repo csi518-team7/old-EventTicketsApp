@@ -39,10 +39,10 @@
                             <h6 th:text="${event.location}"></h6>
                             <p></p>
                             <h3>Date</h3>
-                            <h6 th:id="'event-date' + ${event.eventID}"></h6>
+                            <h6 th:class="'etms-event-date' + ${event.eventID}"></h6>
                             <p></p>
                             <h3>Time</h3>
-                            <h6 th:id="'event-time' + ${event.eventID}"></h6>
+                            <h6 th:class="'etms-event-time' + ${event.eventID}"></h6>
                             <p></p>
                             <h3>Price</h3>
                             <h6 th:text="${event.price}"></h6>
@@ -91,8 +91,8 @@
     
         /*<![CDATA[*/
             var date = new Date(/*[[${event.date}]]*/);
-            $(/*[['#event-date' + ${event.eventID}]]*/).text(days[date.getDay()].slice(0, 3) + ' ' + date.getDate() + ' ' + months[date.getMonth()].slice(0, 3) + ' ' + date.getFullYear());
-            $(/*[['#event-time' + ${event.eventID}]]*/).text(date.getHours() + ':' + ('0' + date.getMinutes()).slice(-2));
+            $(/*[['.etms-event-date' + ${event.eventID}]]*/).text(days[date.getDay()].slice(0, 3) + ' ' + date.getDate() + ' ' + months[date.getMonth()].slice(0, 3) + ' ' + date.getFullYear());
+            $(/*[['.etms-event-time' + ${event.eventID}]]*/).text(date.getHours() + ':' + ('0' + date.getMinutes()).slice(-2));
         /*]]>*/
     </script>
 </body>

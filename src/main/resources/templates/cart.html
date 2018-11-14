@@ -52,137 +52,54 @@
 
                             <!-- Single Upcoming Shows -->
                             <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
-                                    <div class="shows-date">
-                                        <h2>Day <span>Month</span></h2>
-                                    </div>
-                                    <div class="shows-desc d-flex align-items-center">
-                                        <div class="shows-img">
-                                            <h6></h6>
-                                        </div>
-                                        <div class="shows-name">
-                                            <h6>Event Name</h6>
-                                            <p>Location</p>
-                                        </div>
-                                    </div>
-                                    <div class="shows-location">
-                                        <p>Number of Tickets</p>
-                                    </div>
-                                    <div class="shows-time">
-                                        <p>Price per ticket</p>
-                                    </div>
-                                    <div class="buy-tickets">
-                                        <p>Total Amount</p>
-                                    </div>
-                                    
-                                </div>
-                                <hr><hr><hr>
-        
-    
-                            <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
                                 <div class="shows-date">
-                                    <h2>17 <span>July</span></h2>
+                                    <h2>Day <span>Month</span></h2>
                                 </div>
                                 <div class="shows-desc d-flex align-items-center">
                                     <div class="shows-img">
-                                        <img src="img/bg-img/s1.jpg" alt="">
+                                        <h6></h6>
                                     </div>
                                     <div class="shows-name">
-                                        <h6>Electric castle Festival</h6>
-                                        <p>Cluj, Romania</p>
+                                        <h6>Event Name</h6>
+                                        <p>Location</p>
                                     </div>
                                 </div>
                                 <div class="shows-location">
-                                    <p>1 Ticket</p>
+                                    <p>Number of Tickets</p>
                                 </div>
                                 <div class="shows-time">
-                                    <p>$50/ticket</p>
+                                    <p>Price per ticket</p>
                                 </div>
                                 <div class="buy-tickets">
-                                    <p>$50</p>
+                                    <p>Total Amount</p>
                                 </div>
                                 
                             </div>
-    
+                                <hr><hr><hr>
+        
                             <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
+                            <div th:each="transaction : ${transactions}" class="single-upcoming-shows d-flex align-items-center flex-wrap">
                                 <div class="shows-date">
-                                    <h2>23 <span>July</span></h2>
+                                    <h2><div th:class="'etms-event-date' + ${transaction.eventID}"></div> <span><div th:class="'etms-event-month' + ${transaction.eventID}"></div></span></h2>
                                 </div>
                                 <div class="shows-desc d-flex align-items-center">
                                     <div class="shows-img">
-                                        <img src="img/bg-img/s2.jpg" alt="">
+                                        <img th:class="'etms-event-image' + ${transaction.eventID}" src="img/bg-img/s1.jpg" alt=""><!-- <img th:src="${event.imgUrl}" alt=""> -->
                                     </div>
                                     <div class="shows-name">
-                                        <h6>Electric Festival</h6>
-                                        <p>Manhathan, NY, USA</p>
+                                        <h6 th:class="'etms-event-name' + ${transaction.eventID}"></h6>
+                                        <p th:class="'etms-event-location' + ${transaction.eventID}"></p>
                                     </div>
                                 </div>
-                                <div class="shows-location">
-                                    <p>2 Tckets</p>
-                                </div>
-                                <div class="shows-time">
-                                    <p>$30/Ticket</p>
-                                </div>
-                                <div class="buy-tickets">
-                                        <div class="buy-tickets">
-                                                <p>$60</p>
-                                        </div>
-                                </div>
-                            </div>
-    
-                            <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
-                                <div class="shows-date">
-                                    <h2>25 <span>July</span></h2>
-                                </div>
-                                <div class="shows-desc d-flex align-items-center">
-                                    <div class="shows-img">
-                                        <img src="img/bg-img/s3.jpg" alt="">
-                                    </div>
-                                    <div class="shows-name">
-                                        <h6>Sunflower festival</h6>
-                                        <p>Paris, France</p>
-                                    </div>
-                                </div>
-                                <div class="shows-location">
+                                <div class="shows-location"><!--Number of Tickets-->
                                     <p>1 Ticket</p>
                                 </div>
-                                <div class="shows-time">
-                                    <p>$45/ticket</p>
+                                <div class="shows-time"><!--Price per Ticket-->
+                                    <p th:class="'etms-event-price' + ${transaction.eventID}">$50/ticket</p>
                                 </div>
-                                <div class="buy-tickets">
-                                        <div class="buy-tickets">
-                                                <p>$45</p>
-                                        </div>
-                                </div>
-                            </div>
-    
-                            <!-- Single Upcoming Shows -->
-                            <div class="single-upcoming-shows d-flex align-items-center flex-wrap">
-                                <div class="shows-date">
-                                    <h2>30 <span>July</span></h2>
-                                </div>
-                                <div class="shows-desc d-flex align-items-center">
-                                    <div class="shows-img">
-                                        <img src="img/bg-img/s4.jpg" alt="">
-                                    </div>
-                                    <div class="shows-name">
-                                        <h6>Electric castle Festival</h6>
-                                        <p>Cluj, Romania</p>
-                                    </div>
-                                </div>
-                                <div class="shows-location">
-                                    <p>3 Tickets</p>
-                                </div>
-                                <div class="shows-time">
-                                    <p>$15</p>
-                                </div>
-                                <div class="buy-tickets">
-                                        <div class="buy-tickets">
-                                                <p>$45</p>
-                                        </div>
-                                </div>
+                                <div class="buy-tickets"><!--Total Ammount-->
+                                    <p th:class="'etms-event-price' + ${transaction.eventID}">$50</p>                                    
+                                </div>   
                             </div>
     
                         </div>
@@ -218,6 +135,9 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    
+    <!-- Custom JS for Thymeleaf -->
+    <script th:replace="fragments :: single-event-js"></script>
 </body>
 </html>
 

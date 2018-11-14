@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface TransactionService {
     List<Transaction> findByUserID(int userID);
+    List<Transaction> findByUserIDAndStatus(int userID, boolean status);
     Transaction findByUserIDAndEventID(int userID, int eventID);
     void addToCart(int userID, int eventID);
 }

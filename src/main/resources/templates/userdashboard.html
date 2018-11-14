@@ -52,7 +52,7 @@
                             <!-- Single Upcoming Shows -->
                             <div th:each="event : ${events}" class="single-upcoming-shows d-flex align-items-center flex-wrap">
                                 <div class="shows-date">
-                                    <h2><div th:id="'event-date' + ${event.eventID}"></div> <span><div th:id="'event-month' + ${event.eventID}"></div></span></h2>
+                                    <h2><div th:class="'etms-event-date' + ${event.eventID}"></div> <span><div th:class="'etms-event-month' + ${event.eventID}"></div></span></h2>
                                 </div>
                                 <div class="shows-desc d-flex align-items-center">
                                     <div class="shows-img">
@@ -67,8 +67,8 @@
                                     <p th:text="${event.location}" />
                                 </div>
                                 <div class="shows-time">
-                                    <p th:id="'event-day' + ${event.eventID}"></p>
-                                    <p th:id="'event-time' + ${event.eventID}"></p>
+                                    <p th:class="'etms-event-day' + ${event.eventID}"></p>
+                                    <p th:class="'etms-event-time' + ${event.eventID}"></p>
                                 </div>
                                 <div class="buy-tickets">
                                     <form th:action="@{/cancelTicket}" method="POST">
